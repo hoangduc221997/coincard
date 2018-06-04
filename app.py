@@ -35,6 +35,15 @@ def register():
         user.save()
 
         return redirect(url_for('index'))
-
+    
+@app.route("/login", methods = ["GET", "POST"])
+def login():
+    if request.method == "GET":
+        return render_template("login.html")
+    elif request.method == "POST":
+        form = request.form
+        username = form['username']
+        password = form ['password']
+        
 if __name__ == '__main__':
   app.run(debug=True)
