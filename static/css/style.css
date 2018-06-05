@@ -11,7 +11,7 @@ body{
 }
 
 #background-ele{
-  background-image: url("image/888100.jpg");
+  background-image: url("../image/888100.jpg");
   background-size:cover;
 }
 
