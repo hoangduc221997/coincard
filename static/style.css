@@ -1,0 +1,24 @@
+*{
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  image
+}
+
+#background-ele{
+  background-image: url("image/888100.jpg");
+  background-size:cover;
+}
+
+.obj-img{
+  /* object-fit: cover; */
+  width: 100%;
+}
+.h-100{
+  height: 100%;
+}
