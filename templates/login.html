@@ -3,26 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>COINCARD PAGE</title>
+    {% include "main.html" %}
+    <link rel="stylesheet" href="../static/css/login.css">
   </head>
-  <body>
+  <body class =" h-100 container-fluid d-flex align-items-center d-flex justify-content-around">
 
-    <h1>Đăng nhập tại đây/Login here:</h1>
+  <div id="border" class=" bg-white h-80 w-80 d-flex align-items-center d-flex justify-content-around">
+<div class="login-box h-100 w-40">
 
-    <form method="post">
+</div>
+    <div class="d-flex flex-column d-flex justify-content-center ">
+      <h1 class='text-center'>Login here:</h1>
 
-      <label>Tên đăng nhập/Username:</label>
-      <br>
-      <input type="text" name="username" value="">
-      <br><br>
+      <form method="post">
 
-      <label>Mật khẩu/Password:</label>
-      <br>
-      <input type="text" name="password" value="">
-      <br><br>
+        <label>Username:</label>
+        <br>
+        <input type="text" name="username" value="">
+        <br><br>
 
-      <input type="submit" name="" value="Gửi/Submit">
+        <label>Password:</label>
+        <br>
+        <input type="text" name="password" value="">
+        <br><br>
 
-    </form>
+        <input type="submit" name="" value="Gửi/Submit">
+
+      </form>
+    </div>
+
+  </div>
 
 
   </body>
