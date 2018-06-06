@@ -24,13 +24,21 @@ body{
 .obj-img{
   object-fit: cover;
 }
-a:hover{
+
+img:hover{
   box-shadow: 30px 30px 400px 0px #687073;
  /* border: 5px solid #cc0000; */
 }
 .border-radius{
-  border-radius: 100%;
+  border-radius: 50%;
 }
-a:active {
+
+img:active {
     box-shadow: 30px 30px 400px 0px #1a44a3;
+}
+.img-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
