@@ -20,6 +20,10 @@
   width: 40%
 }
 
+.w-30{
+  width: 30%
+}
+
 .login-box{
   background-image: url("../image/login-b.png");
   background-size: contain;
@@ -36,7 +40,42 @@
 }
 
 h1{
-
+  margin: 0;
+  padding:0;
   text-align: center;
-  font-size: 22px
+  font-size: 25px;
+  font-family:sans-serif;
+}
+
+label{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+
+}
+
+input{
+  height: 50px;
+  width: 100%;
+  margin-bottom:20px;
+  font-size 18px;
+  margin-bottom:20px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+.btn-login{
+  background-color: #4CAF50;
+  padding:15px 30px;
+  height: 50px;
+  width:  100%;
+  text-align: center;
+  color: #fff
+}
+
+a{
+  color: #757575;
+  font-weight: lighter;
+
 }
