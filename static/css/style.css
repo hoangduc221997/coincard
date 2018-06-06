@@ -1,0 +1,36 @@
+*{
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+}
+
+#background-ele{
+  background-image: url("");
+  background-size:cover;
+}
+#wrap {
+  background-image: url("../image/888100.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+}
+
+.obj-img{
+  object-fit: cover;
+}
+a:hover{
+  box-shadow: 30px 30px 400px 0px #687073;
+ /* border: 5px solid #cc0000; */
+}
+.border-radius{
+  border-radius: 100%;
+}
+a:active {
+    box-shadow: 30px 30px 400px 0px #1a44a3;
+}
