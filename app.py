@@ -6,10 +6,19 @@ from crawldata import get_coin_data
 import mlab
 from models.user import User
 
+from blogtienao import *
+
 app = Flask(__name__)
 app.secret_key = "A secret key"
 
 mlab.connect()
+data_craw_from_html = getData()
+for i in data_craw_from_html:
+    print(i)
+
+@app.route('/blogtienao')
+def blogtienao():
+    return render_template('blogtienao.html', data = data_craw_from_html)
 
 
 @app.route('/')
