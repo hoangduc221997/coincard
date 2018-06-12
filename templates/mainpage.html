@@ -3,11 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>COINCARD PAGE</title>
+    {% include 'main.html' %}
+    <link rel="stylesheet" href="../static/css/mainpage.css">
+
   </head>
-  <body>
-    <h1>GIỮ CHỖ CHO TRANG CHÍNH</h1>
-    <h1>TẠM THỜI TEST FUNCTION LOGIN</h1>
-    <h2>{{ coin_data }}</h2>
+  <body class="container">
+    {% include 'homepage/hehe.html' %}
+    <div class="w-100 h-100 bg-light">
+      <div>
+        <h1 class="text-center text-20px">COIN MUA BAN HAHA</h1>
+      </div>
+      <div class="w-100 h-100 bg-success">
+        <div class="w-80 h-100 bg-danger">
+        {% include 'homepage/dropdown.html' %}
+        <div class="w-100 h-60 bg-secondary">
+          <div class="w-50 h-90 bg-warm">
+
+          </div>
+          <div class="h-10 w-40 d-flex ">
+            <h2 class="">Lenh mua </h2>
+
+          </div>
+
+        </div>
+
+
+
+        </div>
+
+      </div>
+
+
 
   </body>
 </html>

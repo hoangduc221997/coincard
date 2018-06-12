@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>blog tien ao</title>
+  </head>
+  <body>
+    <div class="">
+    {% for i in data %}
+      <img src="{{i.image}}" alt="">
+      <br>
+      <p>{{i.title}}</p>
+      <br>
+      <p>{{i.sub_title}}</p>
+      <br>
+
+    {% endfor %}
+    </div>
+  </body>
+</html>

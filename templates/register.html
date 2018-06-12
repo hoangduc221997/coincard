@@ -3,44 +3,57 @@
   <head>
     <meta charset="utf-8">
     <title>COINCARD PAGE</title>
+    {% include "main.html" %}
+    <link rel="stylesheet" href="../static/css/register.css">
   </head>
-  <body>
-    <h1>Đăng ký tài khoản ở đây/Register here:</h1>
-    <form method="post">
-      <label>Tên đăng nhập/Username:</label>
-      <br>
-      <input type="text" name="username" value="">
-      <br><br>
+  <body class = "h-100 container-fluid d-flex align-items-center d-flex justify-content-around">
+  <div id="border" class= "bg-white h-80 w-80 d-flex align-items-center d-flex justify-content-around">
+    <div class="login-box h-100 w-40"></div>
+    <div class="w-30 d-flex flex-column d-flex justify-content-center">
+      <h1 class="text-center">Register here</h1>
+      <form method="post">
+        <label>Username</label>
+        <br>
+        <input type="text" name="username" value="">
+        <br>
 
-      <label>Mật khẩu/Password:</label>
-      <br>
-      <input type="text" name="password" value="">
-      <br><br>
+        <label>Password</label>
+        <br>
+        <input type="password" name="password" value="">
+        <br>
 
-      <label>Họ và tên/Fullname:</label>
-      <br>
-      <input type="text" name="fullname" value="">
-      <br><br>
+        <label>Fullname</label>
+        <br>
+        <input type="text" name="fullname" value="">
+        <br>
 
-      <label>Năm sinh/Year of birth:</label>
-      <br>
-      <input type="text" name="yob" value="">
-      <br><br>
+        <label>Year of birth</label>
+        <br>
+        <input type="text" name="yob" value="">
+        <br>
 
-      <label>Email:</label>
-      <br>
-      <input type="text" name="email" value="">
-      <br><br>
+        <label>Email</label>
+        <br>
+        <input type="text" name="email" value="">
+        <br>
 
-      <label>Giới tính/Gender:</label>
-      <br>
-      <input type="radio" name="gender" value=1 checked>Male
-      <input type="radio" name="gender" value=0>Female
-      <br><br>
+      <div class="w-100 d-flex flex-nowrap ">
+        <div class="mr-30px">
+          <label for="m1">Male</label>  <input class="w-10px" type="radio" name="gender" id="m1" value=1 checked>
+        </div>
+        <div class="">
+           <label for="m2">Female</label> <input class="w-10px" type="radio" name="gender" id="m2" value=0>
+        </div>
+      </div>
 
-      <input type="submit" name="" value="Gửi/Submit">
+        <input class="btn-login" type="submit" name="" value="Submit">
 
 
-    </form>
+      </form>
+    </div>
+  </div>
+
+
+
   </body>
 </html>
