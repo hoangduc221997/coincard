@@ -5,20 +5,21 @@
     <title>COINCARD PAGE</title>
     {% include "main.html" %}
     <link rel="stylesheet" href="../static/css/error.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 
   </head>
   <body>
-      <div>
-      <a href="{{ url_for('login') }}">Login</a>
-      <a href="{{ url_for('register') }}">Register</a>
-      <a href="{{ url_for('index') }}">Back to home</a>
+
+
+
+
+
+    <div id= "flexbox" class="error-box mt-100px">
+      <div class="h-100px w-300px d-flex justify-content-around">
+      <a class='btn-login fonthehe' style="text-decoration:none" href="{{ url_for('login') }}">Login</a>
+      <a class='btn-register fonthehe'  style="text-decoration:none" href="{{ url_for('register') }}">Register</a>
+
     </div>
-
-
-
-  
-    <div class="error-box">
 
     </div>
 

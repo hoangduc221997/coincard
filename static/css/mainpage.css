@@ -14,8 +14,9 @@
 }
 
 .w-40{
-  width:40%
+  width:47%
 }
+
 
 .h-60{
   height: 60%
@@ -27,7 +28,17 @@
 .h-10{
   height: 10%
 }
+.h-90{
+  height: 98%
+}
 
 .w-50{
-  height: 50%
+  width: 48%
+}
+
+.mr-10px{
+  margin-right: 20px
+}
+.ml-10px{
+  margin-left: 20px
 }

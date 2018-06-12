@@ -12,9 +12,15 @@ app = Flask(__name__)
 app.secret_key = "A secret key"
 
 mlab.connect()
+<<<<<<< HEAD
 
 # for i in data_craw_from_html:
 #     print(i)
+=======
+data_craw_from_html = getData()
+# for items in data_craw_from_html:
+#     print(items)
+>>>>>>> 729b249bd47c3d4f918d13fc7f83a19544e90d06
 
 @app.route('/blogtienao')
 def blogtienao():

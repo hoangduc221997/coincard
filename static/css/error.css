@@ -13,3 +13,46 @@ body{
    background-position: center;
    background-repeat: no-repeat;
  }
+ #flexbox{
+display: flex;
+align-items: flex-end;
+justify-content: space-around
+ }
+ .h-100px{
+   height: 100px;
+ }
+
+.w-300px{
+  width: 60%;
+}
+
+.btn-login{
+  background-color: #4CAF50;
+  padding: 15px 30px;
+  height: 50px;
+  width : 30%;
+  text-align:center;
+  color: #fff;
+  border-radius: 20px
+
+}
+.btn-register{
+  background-color: #4CAF50;
+  padding: 15px 30px;
+  height: 50px;
+  width : 30%;
+  text-align:center;
+  color: #fff;
+  border-radius: 20px
+
+}
+
+.fonthehe{
+  font-family: 'Dosis', sans-serif !important;
+  font-weight: bold;
+  text-align:center;
+}
+
+.mt-100px{
+  margin-top: 50px
+}
