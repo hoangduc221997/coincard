@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>BUY:</h1>
+
+    <br>
+    {% for data in index_1_am%}
+      <h2>{{data.name}} --- {{data.change}}</h2>
+    {% endfor %}
+
+
+    <hr>
+
+
+    <h1>SELL:</h1>
+    <br>
+    {% for data in index_1_duong%}
+      <h2>{{data.name}} --- {{data.change}}</h2>
+    {% endfor %}
+  </body>
+</html>

@@ -7,13 +7,11 @@
   <body>
     <div class="">
     {% for i in data %}
-      <img src="{{i.image}}" alt="">
-      <br>
-      <p>{{i.title}}</p>
+      <a href="{{i.link}}">{{i.title}}</a>
       <br>
       <p>{{i.sub_title}}</p>
       <br>
-
+      <hr>
     {% endfor %}
     </div>
   </body>

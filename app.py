@@ -12,12 +12,14 @@ app = Flask(__name__)
 app.secret_key = "A secret key"
 
 mlab.connect()
-data_craw_from_html = getData()
-for i in data_craw_from_html:
-    print(i)
+
+# for i in data_craw_from_html:
+#     print(i)
 
 @app.route('/blogtienao')
 def blogtienao():
+    data_craw_from_html = getData()
+    print(len(data_craw_from_html))
     return render_template('blogtienao.html', data = data_craw_from_html)
 
 
@@ -75,16 +77,39 @@ def logout():
     else:
         return redirect(url_for('index'))
 
-# <<<<<<< HEAD
-# @app.route('/test')
-# def test():
-#     return render_template('mainpage.html')
-# =======
+
+coin_data = get_coin_data()
+
 @app.route('/mainpage')
 def mainpage():
-    coin_data = get_coin_data()
-    return render_template('mainpage.html', coin_data=coin_data)
-# >>>>>>> 74ab8705151ebbf60526b64084b12c294f0855ed
+    return render_template('mainpage.html')
+
+
+@app.route('/index_1')
+def index_1():
+    # coin_data = get_coin_data()
+    index_1_am = []
+    index_1_duong = []
+    for i in coin_data:
+        dict = {
+            'name':i['name'],
+            'change':i['change']
+        }
+        if i['change'] < 0:
+            index_1_am.append(dict)
+        elif i['change'] > 0:
+            index_1_duong.append(dict)
+    return render_template('index_1.html', index_1_am=index_1_am, index_1_duong=index_1_duong)
+
+
+@app.route('/index_2')
+def index_2():
+    return render_template('index_2.html', coin_data=coin_data)
+
+
+@app.route('/index_3')
+def index_3():
+    return render_template('index_3.html', coin_data=coin_data)
 
 
 if __name__ == '__main__':
