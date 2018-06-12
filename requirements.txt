@@ -22,5 +22,5 @@ gunicorn
 addict
 shortuuid
 bs4
-crawldata
+
 urllib
