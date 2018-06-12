@@ -1,5 +1,8 @@
 from flask import *
 from mongoengine import *
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+from crawldata import get_coin_data
 import mlab
 from models.user import User
 
@@ -52,7 +55,7 @@ def login():
             return render_template('error.html')
         else:
             session['loggedin'] = True
-            return render_template('mainpage.html')
+            return redirect(url_for('mainpage'))
 
 
 @app.route('/logout')
@@ -63,9 +66,16 @@ def logout():
     else:
         return redirect(url_for('index'))
 
-@app.route('/test')
-def test():
-    return render_template('mainpage.html')
+# <<<<<<< HEAD
+# @app.route('/test')
+# def test():
+#     return render_template('mainpage.html')
+# =======
+@app.route('/mainpage')
+def mainpage():
+    coin_data = get_coin_data()
+    return render_template('mainpage.html', coin_data=coin_data)
+# >>>>>>> 74ab8705151ebbf60526b64084b12c294f0855ed
 
 
 if __name__ == '__main__':
