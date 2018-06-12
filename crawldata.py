@@ -1,37 +1,53 @@
-import pyexcel
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-url="https://coinmarketcap.com/"
-conn=urlopen(url)
-raw_data=conn.read()
-text=raw_data.decode("UTF8")
-soup=BeautifulSoup(text,"html.parser")
-coins=["bitcoin","ethereum","ripple"]
-# for coin in coins:
-section=soup.find("tr",id="id-bitcoin")
-td_list=section.find_all("td")
-for td in range(len(td_list)):
-    if 0 <= td <= 1:
-        continue
-    elif td == 2:
-        marketcap = td_list[td].string
-        print(float(marketcap))
-    elif td == 3:
-        market = td_list[td].a.string
-        marketcap = market.replace('$','')
-        print(float(marketcap))
-    elif td == 4:
-        market = td_list[td].a.string
-        marketcap = market.replace('$','').replace(',','')
-        print(float(marketcap))
-    elif td == 5:
-        marketcap = td_list[td].a.span.string
-        print(marketcap)
-    elif td == 6:
-        marketcap = td_list[td].string
-        print(marketcap)
-    # pyexcel.save_as(records=itune_list,dest_file_name="Itunetopsong.xlsx")
-    # options = {
-    #     'default_search': 'ytsearch',
-    #     'max_downloads': 1
-    # }
+
+def get_coin_data():
+    url="https://coinmarketcap.com/"
+    conn=urlopen(url)
+    raw_data=conn.read()
+    text=raw_data.decode("UTF8")
+    soup=BeautifulSoup(text,"html.parser")
+    coins=["bitcoin","ethereum","ripple","bitcoin-cash","eos","litecoin","tron","neo","bitcoin-gold","binance-coin"]
+    coin_data = []
+    for coin in coins:
+        section=soup.find("tr",id="id-{0}".format(coin))
+        td_list=section.find_all("td")
+        for td in range(len(td_list)):
+            if td == 0:
+                continue
+            elif td == 1:
+                image=td_list[td].find('img','logo-sprite')['src']
+                a = list(image)
+                tail = a[len(a)-3]+a[len(a)-2]+a[len(a)-1]
+                if tail != "png":
+                    if tail != "jpg":
+                        image=td_list[td].find('img','logo-sprite').get('data-src')
+                else:
+                    image=td_list[td].find('img','logo-sprite').get('src')
+                name = td_list[td].find('a','currency-name-container').string
+            elif td == 2:
+                marketcap = float(td_list[td].string)
+            elif td == 3:
+                price = td_list[td].a.string
+                price = float(price.replace('$',''))
+            elif td == 4:
+                volume = td_list[td].a.string
+                volume = float(volume.replace('$','').replace(',',''))
+            elif td == 5:
+                supply = td_list[td].a.span.string
+                supply = float(supply.replace('$','').replace(',',''))
+            elif td == 6:
+                change = td_list[td].string
+                change = float(change.replace('%','')) #unit of change is percentage (%)
+        coin_dict = {
+            "name": name,
+            'image': image,
+            "marketcap": marketcap,
+            "price": price,
+            "volume": volume,
+            "supply": supply,
+            "change": change
+        }
+        coin_data.append(coin_dict)
+
+    return coin_data
