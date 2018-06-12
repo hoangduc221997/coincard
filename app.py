@@ -13,8 +13,8 @@ app.secret_key = "A secret key"
 
 mlab.connect()
 data_craw_from_html = getData()
-for i in data_craw_from_html:
-    print(i)
+# for items in data_craw_from_html:
+#     print(items)
 
 @app.route('/blogtienao')
 def blogtienao():
