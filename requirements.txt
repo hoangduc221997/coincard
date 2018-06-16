@@ -23,4 +23,3 @@ addict
 shortuuid
 bs4
 
-urllib

@@ -24,19 +24,25 @@
   width: 30%
 }
 
-.login-box{
-  background-image: url("../image/login-b.png");
-  background-size: contain;
+.login-box1{
+  background-image: url("../image/B.png");
+
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+
+
+
+
+
 }
 
-.bg-white{
-  background-color: white
+.bg-box{
+  background-color: hsla(0, 100%, 100%, 0.9);
 }
+
 
 #border{
-  border-radius: 20px
+  border-radius: 5px
 }
 
 h1{
@@ -61,7 +67,7 @@ input{
   font-size 18px;
   margin-bottom:20px;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 0px;
   padding-left: 20px;
 }
 

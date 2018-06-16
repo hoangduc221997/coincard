@@ -1,3 +1,19 @@
+
+.bg-header{
+  background-color: hsla(89, 43%, 99%, 0.9);
+}
+
+.body-background{
+
+  background-image:url("../image/background-homepage.jpg");
+  background-size:cover;
+  background-position: center;
+}
+
+.font{
+  font-family: 'Slabo 27px', serif;
+}
+
 .text-20px{
   font-size: 20px
 }
