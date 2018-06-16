@@ -24,12 +24,18 @@
 .h-40{
   height: 40%
 }
+.h-300px{
+  height: 300px
+}
 
 .h-10{
   height: 10%
 }
 .h-90{
   height: 98%
+}
+.h-85{
+  height: 85%
 }
 
 .w-50{
