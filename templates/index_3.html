@@ -5,8 +5,30 @@
     <title></title>
   </head>
   <body>
-    {% for data in coin_data %}
-      <h2>{{ data.name }} ---- {{ data.volume }}</h2>
+    <h1>Chỉ số 3: Tỷ lệ khối lượng giao dịch</h1>
+    <h2>
+      Diễn giải chỉ số:
+      Chỉ số 3 = (Volume (24h) / Price) / Circulating Supply
+    </h2>
+    <hr>
+    <h1>BUY:</h1>
+    {% for data in buy_index_3_list[:5] %}
+      <h2>
+        <img src="{{ data. image }}" alt="">
+        {{ data.name }} : {{ data.index_3 }}
+      </h2>
     {% endfor %}
+
+    <hr>
+    <h1>SELL:</h1>
+    {% for data in sell_index_3_list[:5] %}
+      <h2>
+        <img src="{{ data. image }}" alt="">
+        {{ data.name }} : {{ data.index_3 }}
+      </h2>
+    {% endfor %}
+
+
+
   </body>
 </html>

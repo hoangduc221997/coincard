@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>COINCARD PAGE</title>
+    {% include 'main.html' %}
+    <link rel="stylesheet" href="../static/css/login.css">
+  </head>
+  <body class =" h-100 container-fluid d-flex align-items-center d-flex justify-content-around">
+    <div id='border' class=" bg-white h-80 w-80 d-flex align-items-center d-flex justify-content-around">
+      <div class="login-box h-100 w-40"></div>
+      <div class="w-60 d-flex flex-column d-flex justify-content-center">
+        <h3>DANH SÁCH CÁC ĐỒNG TIỀN</h3>
+        <br>
+        {% for coin in coins %}
+          <a href="{{ url_for('detail_coin', coin=coin)}}">
+            <strong>{{ coin.upper() }}</strong>
+          </a>
+          <br>
+        {% endfor %}
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </body>
+</html>

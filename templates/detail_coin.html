@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Thông tin cơ bản:</h1>
+    <h2>
+      <img src="{{ coin_detail.image }}" alt="">
+      {{ coin_detail.name }}
+    </h2>
+    <h2>Market Cap: ${{ coin_detail.marketcap_str }}</h2>
+    <h2>Price: ${{ coin_detail.price_str }}</h2>
+    <h2>Volume: ${{ coin_detail.volume_str }}</h2>
+    <h2>Supply: {{ coin_detail.supply_str }}</h2>
+    <h2>Change: {{ coin_detail.change }}%</h2>
+
+    <hr>
+
+    <h1>Chỉ số tư vấn:</h1>
+    <h2>Chỉ số 1 - Mức độ biến động giá trong 24h: {{ index_1 }}%</h2>
+    <h2>Chỉ số 2 - Chỉ báo giao dịch: {{ index_2 }}%</h2>
+    <h2>Chỉ số 3 - Tỷ lệ khối lượng giao dịch: {{ index_3 }} </h2>
+
+    <hr>
+
+    <h1>Tư vấn lệnh:</h1>
+    {% if index_1 < 0 and index_2 < 0.03 %}
+      <h1>ĐẶT LỆNH MUA</h1>
+    {% elif index_1 < 0 and index_3 < average_list %}
+      <h1>ĐẶT LỆNH MUA</h1>
+    {% elif index_2 < 0.03 and index_3 < average_list %}
+      <h1>ĐẶT LỆNH MUA</h1>
+    {% elif index_1 < 0 and index_2 < 0.03 and index_3 < average_list %}
+      <h1>ĐẶT LỆNH MUA</h1>
+
+    {% elif index_1 >= 0 and index_2 >= 0.03 %}
+      <h1>ĐẶT LỆNH BÁN</h1>
+    {% elif index_1 >= 0 and index_3 >= average_list %}
+      <h1>ĐẶT LỆNH BÁN</h1>
+    {% elif index_2 >= 0.03 and index_3 >= average_list %}
+      <h1>ĐẶT LỆNH BÁN</h1>
+    {% elif index_1 >= 0 and index_2 >= 0.03 and index_3 >= average_list %}
+      <h1>ĐẶT LỆNH BÁN</h1>
+
+    {% else %}
+      <h1>NÊN CÂN NHẮC THÊM HOẶC CHỌN ĐỒNG TIỀN KHÁC</h1>
+
+    {% endif %}
+
+
+
+
+  </body>
+</html>
