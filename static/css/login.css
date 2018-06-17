@@ -24,25 +24,19 @@
   width: 30%
 }
 
-.login-box1{
-  background-image: url("../image/B.png");
-
-  background-size: cover;
+.login-box{
+  background-image: url("../image/login-b.png");
+  background-size: contain;
   background-position: center;
-
-
-
-
-
+  background-repeat: no-repeat;
 }
 
-.bg-box{
-  background-color: hsla(0, 100%, 100%, 0.9);
+.bg-white{
+  background-color: white
 }
-
 
 #border{
-  border-radius: 5px
+  border-radius: 20px
 }
 
 h1{
@@ -59,26 +53,31 @@ label{
   font-weight: bold;
 
 }
+.mt-5px{
+  margin-top: 6px
+}
 
 input{
-  height: 50px;
+  height: 30px;
   width: 100%;
   margin-bottom:20px;
-  font-size 18px;
+  font-size 10px;
   margin-bottom:20px;
   background-color: #fff;
   border-radius: 0px;
   padding-left: 20px;
+  overflow: hidden;
 }
 
 .btn-login{
   background-color: #4CAF50;
   padding:15px 30px;
   height: 50px;
-  width:  100%;
+  width:  88%;
   text-align: center;
   color: #fff
 }
+
 
 a{
   color: #757575;
