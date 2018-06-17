@@ -5,8 +5,32 @@
     <title></title>
   </head>
   <body>
-    {% for data in coin_data %}
-      <h2>{{ data.name }}</h2>
+    <h1>Chỉ số 2: Chỉ báo dao dịch động (active volume index - AVI)</h1>
+    <h2>
+      Diễn giải chỉ số:
+      Chỉ số 2 = Volume(24h) / Market Cap
+    </h2>
+    <hr>
+    <h1>BUY:</h1>
+    {% for data in index_2_buy %}
+      <h2>
+        <img src="{{ data. image }}" alt="">
+        {{ data.name }} : {{ data.index_2 }} %
+      </h2>
     {% endfor %}
+
+    <hr>
+
+
+    <h1>SELL:</h1>
+    {% for data in index_2_sell %}
+      <h2>
+        <img src="{{ data. image }}" alt="">
+        {{ data.name }} : {{ data.index_2 }} %
+      </h2>
+    {% endfor %}
+
+
+
   </body>
 </html>

@@ -5,11 +5,20 @@
     <title></title>
   </head>
   <body>
+    <h1>Chỉ số 1: Mức độ biến động giá trong 24h</h1>
+    <h2>
+      Diễn giải chỉ số:
+      Chỉ số 1 = Price change in 24h
+    </h2>
+    <hr>
     <h1>BUY:</h1>
 
     <br>
     {% for data in index_1_am%}
-      <h2>{{data.name}} --- {{data.change}}</h2>
+      <h2>
+        <img src="{{ data. image }}" alt="">
+        {{data.name}} : {{data.index_1}} %
+      </h2>
     {% endfor %}
 
 
@@ -19,7 +28,10 @@
     <h1>SELL:</h1>
     <br>
     {% for data in index_1_duong%}
-      <h2>{{data.name}} --- {{data.change}}</h2>
+      <h2>
+        <img src="{{ data. image }}" alt="">
+        {{data.name}} : {{data.index_1}} %
+      </h2>
     {% endfor %}
   </body>
 </html>
