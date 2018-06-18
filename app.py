@@ -104,7 +104,7 @@ def index_1():
             index_1_am.append(dict)
         elif index_1 >= 0:
             index_1_duong.append(dict)
-    return render_template('index_1.html', index_1_am=index_1_am, index_1_duong=index_1_duong)
+    return render_template('index_11.html', index_1_am=index_1_am, index_1_duong=index_1_duong)
 
 
 @app.route('/index_2')
