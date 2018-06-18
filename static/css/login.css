@@ -53,26 +53,31 @@ label{
   font-weight: bold;
 
 }
+.mt-5px{
+  margin-top: 6px
+}
 
 input{
-  height: 50px;
+  height: 30px;
   width: 100%;
   margin-bottom:20px;
-  font-size 18px;
+  font-size 10px;
   margin-bottom:20px;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 0px;
   padding-left: 20px;
+  overflow: hidden;
 }
 
 .btn-login{
   background-color: #4CAF50;
   padding:15px 30px;
   height: 50px;
-  width:  100%;
+  width:  88%;
   text-align: center;
   color: #fff
 }
+
 
 a{
   color: #757575;

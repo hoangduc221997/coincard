@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>COINCARD</title>
+    {% include 'main.html' %}
+    <link rel="stylesheet" href="../static/css/detail.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="../static/image/ahehe.png">
+  </head>
+  <body>
+    {% include 'homepage/header.html' %}
+    <div class="d-flex flex-row justify-content-center">
+      <div class="p-3 border border-secondary rounded m-3 bg-secondary">
+        <h1 class="text-center text-white">
+          <i class="fas fa-coins"></i>
+          TRANG TƯ VẤN CHI TIẾT
+        </h1>
+      </div>
+    </div>
+    <br>
+    <div class="d-flex flex-row justify-content-around">
+      <div class="p-2 border border-warning rounded m-3 bg-warning text-secondary">
+        <h3 class="text-center text-white">Thông tin cơ bản:</h3>
+        <br>
+        <h4>
+          <img src="{{ coin_detail.image }}" alt="" height=30px width=30px>
+          {{ coin_detail.name }}
+        </h4>
+        <h4>Market Cap: ${{ coin_detail.marketcap_str }}</h4>
+        <h4>Price: ${{ coin_detail.price_str }}</h4>
+        <h4>Volume: ${{ coin_detail.volume_str }}</h4>
+        <h4>Supply: {{ coin_detail.supply_str }}</h4>
+        <h4>Change: {{ coin_detail.change }}%</h4>
+      </div>
+
+      <div class="p-2 border border-warning rounded m-3 bg-warning text-secondary">
+        <h3 class="text-center text-white">Chỉ số tư vấn:</h3>
+        <br>
+        <h4>Chỉ số 1 - Mức độ biến động giá trong 24h: {{ index_1 }}%</h4>
+        <h4>Chỉ số 2 - Chỉ báo giao dịch: {{ index_2 }}%</h4>
+        <h4>Chỉ số 3 - Tỷ lệ khối lượng giao dịch: {{ index_3 }} </h4>
+      </div>
+
+      <div class="p-2 border border-warning rounded m-3 bg-warning">
+        <h3 class="text-center text-white">Tư vấn lệnh:</h3>
+        <br><br><br>
+        {% if index_1 < 0 and index_2 < 0.03 %}
+          <h1 class="text-success">NÊN MUA</h1>
+        {% elif index_1 < 0 and index_3 < average_list %}
+          <h1 class="text-success">NÊN MUA</h1>
+        {% elif index_2 < 0.03 and index_3 < average_list %}
+          <h1 class="text-success">NÊN MUA</h1>
+        {% elif index_1 < 0 and index_2 < 0.03 and index_3 < average_list %}
+          <h1 class="text-success">NÊN MUA</h1>
+
+
+        {% elif index_1 >= 0 and index_2 >= 0.03 %}
+          <h1 class="text-danger">NÊN BÁN</h1>
+        {% elif index_1 >= 0 and index_3 >= average_list %}
+          <h1 class="text-danger">NÊN BÁN</h1>
+        {% elif index_2 >= 0.03 and index_3 >= average_list %}
+          <h1 class="text-danger">NÊN BÁN</h1>
+        {% elif index_1 >= 0 and index_2 >= 0.03 and index_3 >= average_list %}
+          <h1 class="text-danger">NÊN BÁN</h1>
+
+
+
+        {% else %}
+          <h1>NÊN CÂN NHẮC THÊM HOẶC CHỌN ĐỒNG TIỀN KHÁC</h1>
+
+        {% endif %}
+      </div>
+    </div>
+    <br>
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>COINCARD</title>
+    {% include 'main.html' %}
+    <link rel="stylesheet" href="../static/css/blog.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="../static/image/ahehe.png">
+
+  </head>
+  <body>
+    {% include 'homepage/subheader.html' %}
+    
+
+    <h1 class="text-center text-white">
+      <i class="fab fa-blogger"></i>
+      TRANG THÔNG TIN TIỀN ẢO
+    </h1>
+  <div class="d-flex flex-column">
+    {% for i in data %}
+    <div class="p-3 border border-white rounded m-3 bg-white">
+      <h5 class="text-secondary font-italic">
+        <i class="fas fa-newspaper"></i>
+        Article tham khảo:
+      </h5>
+      <img src="{{ i.image }}" alt="">
+      <br>
+      <i class="fas fa-link"></i>
+      <a href="{{ i.link }}" class="text-warning">{{ i.title }}</a>
+      <p class="text-secondary">{{ i.sub_title }}</p>
+    </div>
+    {% endfor %}
+
+
+  </div>
+
+
+  </body>
+</html>

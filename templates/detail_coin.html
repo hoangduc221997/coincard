@@ -2,12 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>COINCARD</title>
+    <link rel="shortcut icon" type="image/png" href="../static/image/ahehe.png">
+    {% include 'main.html' %}
   </head>
   <body>
     <h1>Thông tin cơ bản:</h1>
     <h2>
-      <img src="{{ coin_detail.image }}" alt="">
+      <img src="{{ coin_detail.image }}" alt="" height=30px width=30px>
       {{ coin_detail.name }}
     </h2>
     <h2>Market Cap: ${{ coin_detail.marketcap_str }}</h2>

@@ -22,11 +22,7 @@ mlab.connect()
 # #     print(items)
 # >>>>>>> 729b249bd47c3d4f918d13fc7f83a19544e90d06
 
-@app.route('/blogtienao')
-def blogtienao():
-    data_craw_from_html = getData()
-    print(len(data_craw_from_html))
-    return render_template('blogtienao.html', data = data_craw_from_html)
+
 
 
 @app.route('/')
@@ -183,12 +179,26 @@ def detail_coin(coin):
         average_list = sum(index_3_list) / len(index_3_list)
     #     sort_index_3_list = index_3_list.sort()
     # print(index_3_list)
-    return render_template('detail_coin.html',  coin_detail=coin_detail,
+    return render_template('detail_coin_1.html',  coin_detail=coin_detail,
                                                 index_1=index_1,
                                                 index_2=index_2,
                                                 index_3=index_3,
                                                 index_3_list = index_3_list,
                                                 average_list = average_list)
+
+@app.route('/forum')
+def forum():
+    return render_template('forum.html')
+
+@app.route('/blog')
+def blog():
+    data_craw_from_html = getData()
+    print(len(data_craw_from_html))
+    return render_template('blog.html', data = data_craw_from_html)
+
+@app.route('/trade')
+def trade():
+    return render_template('trade.html')
 
 if __name__ == '__main__':
   app.run(debug=True)

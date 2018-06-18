@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>COINCARD</title>
+    <link rel="shortcut icon" type="image/png" href="../static/image/ahehe.png">
   </head>
   <body>
     <h1>Chỉ số 1: Mức độ biến động giá trong 24h</h1>
@@ -16,7 +17,7 @@
     <br>
     {% for data in index_1_am%}
       <h2>
-        <img src="{{ data. image }}" alt="">
+        <img src="{{ data. image }}" alt="" height=30px width=30px>
         {{data.name}} : {{data.index_1}} %
       </h2>
     {% endfor %}
@@ -29,7 +30,7 @@
     <br>
     {% for data in index_1_duong%}
       <h2>
-        <img src="{{ data. image }}" alt="">
+        <img src="{{ data. image }}" alt="" height=30px width=30px>
         {{data.name}} : {{data.index_1}} %
       </h2>
     {% endfor %}

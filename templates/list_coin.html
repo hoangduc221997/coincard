@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>COINCARD PAGE</title>
+    <title>COINCARD</title>
+    <link rel="shortcut icon" type="image/png" href="../static/image/ahehe.png">
     {% include 'main.html' %}
     <link rel="stylesheet" href="../static/css/login.css">
   </head>
@@ -10,13 +11,15 @@
     <div id='border' class=" bg-white h-80 w-80 d-flex align-items-center d-flex justify-content-around">
       <div class="login-box h-100 w-40"></div>
       <div class="w-60 d-flex flex-column d-flex justify-content-center">
-        <h3>DANH SÁCH CÁC ĐỒNG TIỀN</h3>
-        <br>
+        <h3 class="p-2 border border-warning rounded bg-warning text-white m-3">
+          <i class="fas fa-coins"></i>
+          DANH SÁCH CÁC ĐỒNG TIỀN
+        </h3>
         {% for coin in coins %}
-          <a href="{{ url_for('detail_coin', coin=coin)}}">
-            <strong>{{ coin.upper() }}</strong>
+          <a href="{{ url_for('detail_coin', coin=coin)}}" class="font-weight-bold text-center">
+            {{ coin.upper() }}
           </a>
-          <br>
+        <br>
         {% endfor %}
 
       </div>

@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>COINCARD</title>
+    <link rel="shortcut icon" type="image/png" href="../static/image/ahehe.png">
   </head>
   <body>
     <h1>Chỉ số 3: Tỷ lệ khối lượng giao dịch</h1>
@@ -14,7 +15,7 @@
     <h1>BUY:</h1>
     {% for data in buy_index_3_list[:5] %}
       <h2>
-        <img src="{{ data. image }}" alt="">
+        <img src="{{ data. image }}" alt="" height=30px width=30px>
         {{ data.name }} : {{ data.index_3 }}
       </h2>
     {% endfor %}
@@ -23,7 +24,7 @@
     <h1>SELL:</h1>
     {% for data in sell_index_3_list[:5] %}
       <h2>
-        <img src="{{ data. image }}" alt="">
+        <img src="{{ data. image }}" alt="" height=30px width=30px>
         {{ data.name }} : {{ data.index_3 }}
       </h2>
     {% endfor %}

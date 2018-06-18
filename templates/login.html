@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>COINCARD PAGE</title>
+    <title>COINCARD</title>
+    <link rel="shortcut icon" type="image/png" href="../static/image/ahehe.png">
     {% include 'main.html' %}
     <link rel="stylesheet" href="../static/css/login.css">
   </head>
@@ -17,31 +18,29 @@
 
       <form method="post">
 
-      <div class="form-input">
-
+      <div class="form-input d-flex nowrap" color="white">
+        <i class=" fas fa-user fas fa-camera-retro fa-lg mt-5px px-2"></i>
 
         <input type="text" name="username"  placeholder="Enter Username" value="">
 
       </div>
 
 
-      <div class="form-input">
+      <div class="form-input d-flex nowrap">
+        <i class="fas fa-unlock fas fa-camera-retro fa-lg mt-5px px-2"></i>
 
         <input type="password" name="password" placeholder="Enter Password" value="">
-        <br>
-        <br>
       </div>
-      <div>
-        <input type="submit" name="" value="Login" class="btn-login">
+
+
+      <div class="d-flex flex-row-reverse">
+        <input type="submit" name="" value="Sign in" class="btn-login">
       </div>
         <br>
 
 
         <a href="{{url_for('register')}}">Create your account --></a>
-<!-- <<<<<<< HEAD
-=======
 
->>>>>>> 729b249bd47c3d4f918d13fc7f83a19544e90d06 -->
       </form>
     </div>
 
