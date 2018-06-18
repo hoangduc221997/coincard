@@ -36,12 +36,12 @@
                 <tr>
 
                   <th class="w-80" scope="col">Coin</th>
-                  <th  scope="col">Index 1</th>
+                  <th  scope="col">Index 3</th>
                 </tr>
                 <tr>
-                  {% for data in index_1_am%}
+                  {% for data in buy_index_3_list[:5] %}
                   <td> <img src="{{ data. image }}" alt="" height=30px width=30px> {{data.name}} </td>
-                  <td>{{data.index_1}} %</td>
+                  <td>{{data.index_3}} %</td>
                 </tr>
                   {% endfor %}
 
@@ -68,12 +68,12 @@
                 <tr>
 
                   <th class="w-80" scope="col">Coin</th>
-                  <th  scope="col">Index 1</th>
+                  <th  scope="col">Index 3</th>
                 </tr>
                 <tr>
-                  {% for data in index_1_duong%}
+                {% for data in sell_index_3_list[:5] %}
                   <td> <img src="{{ data. image }}" alt="" height=30px width=30px> {{data.name}} </td>
-                  <td>{{data.index_1}} %</td>
+                  <td>{{data.index_3}} %</td>
                 </tr>
                   {% endfor %}
 

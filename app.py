@@ -68,7 +68,7 @@ def login():
             return render_template('error.html')
         else:
             session['loggedin'] = True
-            return redirect(url_for('mainpage'))
+            return redirect(url_for('index_1'))
 
 
 @app.route('/logout')
@@ -128,7 +128,7 @@ def index_2():
         elif index_2 >= 0.03:
             index_2_sell.append(dict)
 
-    return render_template('index_2.html', index_2_buy=index_2_buy, index_2_sell=index_2_sell)
+    return render_template('index_22.html', index_2_buy=index_2_buy, index_2_sell=index_2_sell)
 
 
 @app.route('/index_3')
@@ -149,7 +149,7 @@ def index_3():
         sell_index_3_list = sorted(index_3_list, key=lambda i: i['index_3'], reverse=True)
 
 
-    return render_template('index_3.html', buy_index_3_list=buy_index_3_list, sell_index_3_list=sell_index_3_list)
+    return render_template('index_33.html', buy_index_3_list=buy_index_3_list, sell_index_3_list=sell_index_3_list)
 
 
 @app.route('/list_coin')
@@ -201,4 +201,4 @@ def trade():
     return render_template('trade.html')
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run(port=8000,debug=True)
