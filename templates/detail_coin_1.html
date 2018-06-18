@@ -20,54 +20,70 @@
     </div>
     <br>
     <div class="d-flex flex-row justify-content-around">
-      <div class="p-2 border border-warning rounded m-3 bg-warning text-secondary">
-        <h3 class="text-center text-white">Thông tin cơ bản:</h3>
-        <br>
-        <h4>
+      <div class="p-2 border border-warning rounded m-3 bg-white text-secondary">
+        <h3 class="text-center text-warning">Thông tin cơ bản:</h3>
+        <!-- <br> -->
+        <h3 class="text-warning">
           <img src="{{ coin_detail.image }}" alt="" height=30px width=30px>
           {{ coin_detail.name }}
-        </h4>
+        </h3>
         <h4>Market Cap: ${{ coin_detail.marketcap_str }}</h4>
         <h4>Price: ${{ coin_detail.price_str }}</h4>
-        <h4>Volume: ${{ coin_detail.volume_str }}</h4>
+        <h4>Volume in 24h: ${{ coin_detail.volume_str }}</h4>
         <h4>Supply: {{ coin_detail.supply_str }}</h4>
-        <h4>Change: {{ coin_detail.change }}%</h4>
+        <h4>Change in 24h: {{ coin_detail.change }}%</h4>
       </div>
 
-      <div class="p-2 border border-warning rounded m-3 bg-warning text-secondary">
-        <h3 class="text-center text-white">Chỉ số tư vấn:</h3>
+      <div class="p-2 border border-warning rounded m-3 bg-white text-secondary">
+        <h3 class="text-center text-warning">Chỉ số tư vấn:</h3>
         <br>
         <h4>Chỉ số 1 - Mức độ biến động giá trong 24h: {{ index_1 }}%</h4>
         <h4>Chỉ số 2 - Chỉ báo giao dịch: {{ index_2 }}%</h4>
         <h4>Chỉ số 3 - Tỷ lệ khối lượng giao dịch: {{ index_3 }} </h4>
       </div>
 
-      <div class="p-2 border border-warning rounded m-3 bg-warning">
-        <h3 class="text-center text-white">Tư vấn lệnh:</h3>
+      <div class="p-2 border border-warning rounded m-3 bg-white">
+        <h3 class="text-center text-warning">Tư vấn lệnh:</h3>
         <br><br><br>
         {% if index_1 < 0 and index_2 < 0.03 %}
-          <h1 class="text-success">NÊN MUA</h1>
+          <a href="{{ url_for('trade') }}">
+            <h1 class="text-success">NÊN MUA</h1>
+          </a>
         {% elif index_1 < 0 and index_3 < average_list %}
-          <h1 class="text-success">NÊN MUA</h1>
+          <a href="{{ url_for('trade') }}">
+            <h1 class="text-success">NÊN MUA</h1>
+          </a>
         {% elif index_2 < 0.03 and index_3 < average_list %}
-          <h1 class="text-success">NÊN MUA</h1>
+          <a href="{{ url_for('trade') }}">
+            <h1 class="text-success">NÊN MUA</h1>
+          </a>
         {% elif index_1 < 0 and index_2 < 0.03 and index_3 < average_list %}
+        <a href="{{ url_for('trade') }}">
           <h1 class="text-success">NÊN MUA</h1>
+        </a>
 
 
         {% elif index_1 >= 0 and index_2 >= 0.03 %}
-          <h1 class="text-danger">NÊN BÁN</h1>
+          <a href="{{ url_for('trade')}}">
+            <h1 class="text-danger">NÊN BÁN</h1>
+          </a>
         {% elif index_1 >= 0 and index_3 >= average_list %}
-          <h1 class="text-danger">NÊN BÁN</h1>
+          <a href="{{ url_for('trade')}}">
+            <h1 class="text-danger">NÊN BÁN</h1>
+          </a>
         {% elif index_2 >= 0.03 and index_3 >= average_list %}
-          <h1 class="text-danger">NÊN BÁN</h1>
+          <a href="{{ url_for('trade')}}">
+            <h1 class="text-danger">NÊN BÁN</h1>
+          </a>
         {% elif index_1 >= 0 and index_2 >= 0.03 and index_3 >= average_list %}
-          <h1 class="text-danger">NÊN BÁN</h1>
+          <a href="{{ url_for('trade')}}">
+            <h1 class="text-danger">NÊN BÁN</h1>
+          </a>
 
 
 
         {% else %}
-          <h1>NÊN CÂN NHẮC THÊM HOẶC CHỌN ĐỒNG TIỀN KHÁC</h1>
+          <h1 class="text-info">NÊN CÂN NHẮC THÊM</h1>
 
         {% endif %}
       </div>

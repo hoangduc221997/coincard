@@ -32,9 +32,6 @@
 .w-40{
   width:47%
 }
-.w-20{
-  width: 20%
-}
 
 
 .h-60{
@@ -66,8 +63,4 @@
 }
 .ml-10px{
   margin-left: 20px
-}
-.border {border-color:coral;}
-.mt-5px{
-  margin-top: 5px
 }

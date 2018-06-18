@@ -15,72 +15,42 @@
       <div>
         <h1 class="text-center text-50px font border border-warning rounded w-70 bg-warning text-white p-2 w-50 ">TRANG TƯ VẤN MUA BÁN COINCARD</h1>
       </div>
-      <div class="w-100 h-100 bg-success d-flex flex-nowrap">
+      <div class="w-100 h-100 bg-success">
         <div class="w-80 h-100 bg-white">
         {% include 'homepage/dropdown.html' %}
         <div class="w-100 h-85 bg-white py-3 d-flex justify-content-between">
           <div class="w-40 h-90 bg-white d-flex align-content-between d-flex justify-content-center flex-wrap py-3 ml-10px border rounded border-warning">
             <div class="bg-warning h-10 w-50 d-flex justify-content-center border rounded">
-              <h2 class="text-center text-success m-2">
+              <h2 class="tex-center text-success m-2">
                 <i class="fas fa-cart-plus"></i>
                 TƯ VẤN MUA
               </h2>
 
             </div>
             <!-- {% include 'homepage/coin.html' %} -->
-            <table class="table borderless d-flex justify-content-between w-80">
-
-
-
-              <tbody>
-                <tr>
-
-                  <th class="w-80" scope="col">Coin</th>
-                  <th  scope="col">Index 1</th>
-                </tr>
-                <tr>
-                  {% for data in index_1_am%}
-                  <td> <img src="{{ data. image }}" alt="" height=30px width=30px> {{data.name}} </td>
-                  <td>{{data.index_1}} %</td>
-                </tr>
-                  {% endfor %}
-
-
-
-              </tbody>
-            </table>
-
-
-
+            {% for data in index_1_am%}
+              <h5>
+                <img src="{{ data. image }}" alt="" height=30px width=30px>
+                {{data.name}} : {{data.index_1}} %
+              </h5>
+              <br>
+            {% endfor %}
           </div>
-          <div class="w-40 h-90 bg-white d-flex justify-content-center d-flex align-content-start d-flex flex-wrap py-3 mr-10px border rounded border-warning">
+          <div class="w-40 h-90 bg-white d-flex justify-content-center py-3 mr-10px border rounded border-warning">
             <div class="bg-warning h-10 w-50 d-flex justify-content-center border rounded">
               <h2 class="text-center text-danger m-2">
                 <i class="fas fa-cart-arrow-down"></i>
                 TƯ VẤN BÁN
               </h2>
             </div>
-            <table class="table borderless d-flex justify-content-between w-80 mt-5px">
-
-
-
-              <tbody>
-                <tr>
-
-                  <th class="w-80" scope="col">Coin</th>
-                  <th  scope="col">Index 1</th>
-                </tr>
-                <tr>
-                  {% for data in index_1_duong%}
-                  <td> <img src="{{ data. image }}" alt="" height=30px width=30px> {{data.name}} </td>
-                  <td>{{data.index_1_duong}} %</td>
-                </tr>
-                  {% endfor %}
-
-
-
-              </tbody>
-            </table>
+            <div>
+              {% for data in index_1_duong%}
+                <h5>
+                  <img src="{{ data. image }}" alt="" height=30px width=30px>
+                  {{data.name}} : {{data.index_1}} %
+                </h5>
+              {% endfor %}
+            </div>
           </div>
 
 
@@ -114,16 +84,10 @@
             </div>
           </div>
 
-
-
         </div>
 
 
 
-
-        </div>
-        <div class="bg-danger h-100 w-20">
-          heloo
         </div>
 
       </div>
