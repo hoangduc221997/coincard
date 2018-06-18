@@ -14,7 +14,10 @@
 
 </div>
     <div class="w-30 d-flex flex-column d-flex justify-content-center ">
-      <h1>Login Here</h1> <br>
+      <h1 class="text-warning">
+        <i class="fas fa-sign-in-alt"></i>
+        Login Here
+      </h1> <br>
 
       <form method="post">
 
@@ -39,7 +42,13 @@
         <br>
 
 
-        <a href="{{url_for('register')}}">Create your account --></a>
+        <a href="{{url_for('register')}}">
+          <h5 class="text-warning">
+          <i class="fas fa-registered"></i>
+          Create your account -->
+          </h5>
+        </a>
+
 
       </form>
     </div>

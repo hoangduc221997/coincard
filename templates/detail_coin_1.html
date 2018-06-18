@@ -23,7 +23,7 @@
       <div class="p-2 border border-warning rounded m-3 bg-warning text-secondary">
         <h3 class="text-center text-white">Thông tin cơ bản:</h3>
         <br>
-        <h4>
+        <h4 class="text-white">
           <img src="{{ coin_detail.image }}" alt="" height=30px width=30px>
           {{ coin_detail.name }}
         </h4>
@@ -46,28 +46,44 @@
         <h3 class="text-center text-white">Tư vấn lệnh:</h3>
         <br><br><br>
         {% if index_1 < 0 and index_2 < 0.03 %}
-          <h1 class="text-success">NÊN MUA</h1>
+          <a href="{{ url_for('trade')}}">
+            <h1 class="text-success">NÊN MUA</h1>
+          </a>
         {% elif index_1 < 0 and index_3 < average_list %}
-          <h1 class="text-success">NÊN MUA</h1>
+          <a href="{{ url_for('trade')}}">
+            <h1 class="text-success">NÊN MUA</h1>
+          </a>
         {% elif index_2 < 0.03 and index_3 < average_list %}
-          <h1 class="text-success">NÊN MUA</h1>
+          <a href="{{ url_for('trade')}}">
+            <h1 class="text-success">NÊN MUA</h1>
+          </a>
         {% elif index_1 < 0 and index_2 < 0.03 and index_3 < average_list %}
-          <h1 class="text-success">NÊN MUA</h1>
+          <a href="{{ url_for('trade')}}">
+            <h1 class="text-success">NÊN MUA</h1>
+          </a>
 
 
         {% elif index_1 >= 0 and index_2 >= 0.03 %}
-          <h1 class="text-danger">NÊN BÁN</h1>
+          <a href="{{ url_for('trade') }}">
+            <h1 class="text-danger">NÊN BÁN</h1>
+          </a>
         {% elif index_1 >= 0 and index_3 >= average_list %}
-          <h1 class="text-danger">NÊN BÁN</h1>
+          <a href="{{ url_for('trade') }}">
+            <h1 class="text-danger">NÊN BÁN</h1>
+          </a>
         {% elif index_2 >= 0.03 and index_3 >= average_list %}
-          <h1 class="text-danger">NÊN BÁN</h1>
+          <a href="{{ url_for('trade') }}">
+            <h1 class="text-danger">NÊN BÁN</h1>
+          </a>
         {% elif index_1 >= 0 and index_2 >= 0.03 and index_3 >= average_list %}
-          <h1 class="text-danger">NÊN BÁN</h1>
+          <a href="{{ url_for('trade') }}">
+            <h1 class="text-danger">NÊN BÁN</h1>
+          </a>
 
 
 
         {% else %}
-          <h1>NÊN CÂN NHẮC THÊM HOẶC CHỌN ĐỒNG TIỀN KHÁC</h1>
+          <h1 class="text-info">NÊN CÂN NHẮC THÊM</h1>
 
         {% endif %}
       </div>

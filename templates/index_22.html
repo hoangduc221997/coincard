@@ -2,10 +2,138 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>COINCARD</title>
+    <link rel="shortcut icon" type="image/png" href="../static/image/ahehe.png">
+    {% include 'main.html' %}
+    <link rel="stylesheet" href="../static/css/mainpage.css">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
   </head>
-  <body>
-    hhhhh
-    
+  <body class=" body-background">
+    {% include 'homepage/header.html' %}
+    <div class="w-100 h-100 bg-header">
+      <div>
+        <h1 class="text-center text-50px font border border-warning rounded w-70 bg-warning text-white p-2 w-50 ">TRANG TƯ VẤN MUA BÁN COINCARD</h1>
+      </div>
+      <div class="w-100 h-100 bg-white d-flex flex-nowrap">
+        <div class="w-80 h-100 bg-white">
+        {% include 'homepage/dropdown.html' %}
+        <div class="w-100 h-85 bg-white py-3 d-flex justify-content-between">
+          <div class="w-40 h-90 bg-white d-flex align-content-start d-flex justify-content-center flex-wrap py-3 ml-10px border rounded border-warning">
+            <div class="bg-warning h-10 w-50 d-flex justify-content-center border rounded">
+              <h2 class="text-center text-success m-2">
+                <i class="fas fa-cart-plus"></i>
+                TƯ VẤN MUA
+              </h2>
+
+            </div>
+            <!-- {% include 'homepage/coin.html' %} -->
+            <table class="table borderless d-flex justify-content-between w-80">
+
+
+
+              <tbody>
+                <tr>
+
+                  <th class="w-80" scope="col">Coin</th>
+                  <th  scope="col">Index 2</th>
+                </tr>
+                <tr>
+                  {% for data in index_2_buy%}
+                  <td> <img src="{{ data. image }}" alt="" height=30px width=30px> {{data.name}} </td>
+                  <td>{{data.index_2}} %</td>
+                </tr>
+                  {% endfor %}
+
+
+
+              </tbody>
+            </table>
+
+
+
+          </div>
+          <div class="w-40 h-90 bg-white d-flex justify-content-center d-flex align-content-start d-flex flex-wrap py-3 mr-10px border rounded border-warning">
+            <div class="bg-warning h-10 w-50 d-flex justify-content-center border rounded">
+              <h2 class="text-center text-danger m-2">
+                <i class="fas fa-cart-arrow-down"></i>
+                TƯ VẤN BÁN
+              </h2>
+            </div>
+            <table class="table borderless d-flex justify-content-between w-80 mt-5px">
+
+
+
+              <tbody>
+                <tr>
+
+                  <th class="w-80" scope="col">Coin</th>
+                  <th  scope="col">Index 2</th>
+                </tr>
+                <tr>
+                  {% for data in index_2_sell%}
+                  <td> <img src="{{ data. image }}" alt="" height=30px width=30px> {{data.name}} </td>
+                  <td>{{data.index_2}} %</td>
+                </tr>
+                  {% endfor %}
+
+
+
+              </tbody>
+            </table>
+          </div>
+
+
+
+
+
+
+        </div>
+        <div class="w-100 h-300px bg-white d-flex justify-content-around d-flex align-items-center">
+          <div class="w-40 h-85 bg-white border rounded border-warning py-3 px-3">
+            <a href="{{ url_for('blog') }}">
+              <h2 class="text-center text-warning">
+                <i class="fab fa-blogger"></i>
+                BLOG TIN TIỀN ẢO
+              </h2>
+            </a>
+            <div class="text-center">
+              <img src="../static/image/img-blog.png" alt="" height=160px width=400px >
+            </div>
+          </div>
+
+          <div class="w-40 h-85 bg-white border rounded border-warning py-3 px-3">
+            <a href="{{ url_for('forum') }}">
+              <h2 class="text-center text-warning">
+                <i class="fas fa-comments"></i>
+                FORUM
+              </h2>
+            </a>
+            <div class="text-center">
+              <img src="../static/image/img-forum.png" alt="" height=160px width=400px >
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+
+
+        </div>
+        <div class="bg-white h-100 w-20 border border-warning m-5 text-center">
+          <br>
+          <h1 class="text-warning">CHỈ SỐ 2</h1>
+          <h2 class="text-secondary">Chỉ báo dao dịch động (active volume index - AVI)</h2>
+          <h2 class="text-secondary">=</h2>
+          <h2 class="text-secondary">Volume(in 24h) / Market Cap</h2>
+        </div>
+
+      </div>
+
+
+
+
   </body>
 </html>

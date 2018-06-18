@@ -36,12 +36,12 @@
                 <tr>
 
                   <th class="w-80" scope="col">Coin</th>
-                  <th  scope="col">Index 1</th>
+                  <th  scope="col">Index 3</th>
                 </tr>
                 <tr>
-                  {% for data in index_1_am%}
+                  {% for data in buy_index_3_list[:5] %}
                   <td> <img src="{{ data. image }}" alt="" height=30px width=30px> {{data.name}} </td>
-                  <td>{{data.index_1}} %</td>
+                  <td>{{data.index_3}}%</td>
                 </tr>
                   {% endfor %}
 
@@ -68,12 +68,12 @@
                 <tr>
 
                   <th class="w-80" scope="col">Coin</th>
-                  <th  scope="col">Index 1</th>
+                  <th  scope="col">Index 3</th>
                 </tr>
                 <tr>
-                  {% for data in index_1_duong%}
+                {% for data in sell_index_3_list[:5] %}
                   <td> <img src="{{ data. image }}" alt="" height=30px width=30px> {{data.name}} </td>
-                  <td>{{data.index_1}} %</td>
+                  <td>{{data.index_3}}%</td>
                 </tr>
                   {% endfor %}
 
@@ -124,8 +124,10 @@
         </div>
         <div class="bg-white h-100 w-20 border border-warning m-5 text-center">
           <br>
-          <h1 class="text-warning">CHỈ SỐ 1</h1>
-          <h2 class="text-secondary">Mức độ biến động giá trong 24h</h2>
+          <h1 class="text-warning">CHỈ SỐ 3</h1>
+          <h2 class="text-secondary">Tỷ lệ khối lượng giao dịch</h2>
+          <h2 class="text-secondary">=</h2>
+          <h2 class="text-secondary">(Volume(in 24h) / Price) / Circulating Supply</h2>
         </div>
 
       </div>
